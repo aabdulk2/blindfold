@@ -3,12 +3,20 @@
 {% block content %}
     <h1>Profile</h1>
     <div class="profile">
-        <p>Username: {{ user.username }}</p><br>
-        <p>Name: {{ user.firstName }} {{ user.lastName }}</p><br>
-        <p>Age: {{ user.age }}</p><br>
-        <p>Email: {{ user.email }}</p><br>
-        <p>Gender: {{ user.gender }}</p><br>
-        <p>Preference: {{ user.preference }}</p><br>
-        <p>Bio: {{ user.bio }}</p><br>
+        <div class="left">
+            <h2>{{ user.username }}</h2>
+            <div class="profile-pic">
+                <img src={{ user.image if user.image else "../static/images/default-profile.webp"}} alt="default">
+            </div>
+            <p>{{ user.firstName }} {{ user.lastName }}</p>
+            <p>{{ user.email }}</p>
+            <p>Age: {{ user.age }}</p>
+            <p>Gender: {{ user.gender }}</p>
+            <p>Preference: {{ user.preference }}</p>
+        </div>
+        <div class="right">
+            <h2>Biography</h2>
+            <p>{{ user.bio }}</p><br>
+        </div>
     </div>  
 {% endblock %}
