@@ -1,0 +1,19 @@
+{% extends 'baseX.html' %}
+{% block title %}Match{% endblock %}
+{% block content %}
+    <h1>Match?</h1>
+    <div class="profile">
+        <p>Username: {{ user.username }}</p><br>
+        <p>Name: {{ user.firstName }} {{ user.lastName }}</p><br>
+        <p>Age: {{ user.age }}</p><br>
+        <p>Email: {{ user.email }}</p><br>
+        <p>Gender: {{ user.gender }}</p><br>
+        <p>Preference: {{ user.preference }}</p><br>
+        <p>Bio: {{ user.bio }}</p><br>
+    </div> 
+    <a href="/match">Find a new match!</a> 
+    <form action="/matched" method="POST">
+        <input type="hidden" value={{ user.email }} name="email" id="email">
+        <button>Like</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'baseX.html' %}
+{% block title %}Match{% endblock %}
+{% block content %}
+    <h1>Matches</h1>
+    {% for user in users %}
+        <h3>{{ user.firstName }} {{ user.lastName }}</h3>
+    {% endfor %}
+
+{% endblock %}

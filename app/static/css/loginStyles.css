@@ -1,0 +1,130 @@
+/* unvisited link */
+a:link {
+    color: white;
+    text-decoration: none;
+}
+  
+/* visited link */
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+  
+/* mouse over link */
+a:hover {
+    color: white;
+    text-decoration: underline;
+}
+  
+/* selected link */
+a:active {
+    color: white;
+    text-decoration: none;
+}
+body{
+    overflow: hidden;
+}
+button.sign-button:hover {
+    background-color: #90ccf4;
+}
+button.sign-button{
+    cursor: pointer;
+    background-color: #5DA2D5;
+    border: none;
+    color: white;
+    width:325px;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+}
+
+select{
+    border-style: solid;
+    border-color: lightgray;
+    border-width: 2px;
+    cursor: pointer;
+    border: none;
+    color: gray;
+    width:325px;
+    padding: 10px 16px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+option.hide{
+    display:none;
+}
+
+form.login-form{
+    border-radius: 15px;
+    border-style: solid;
+    border-color:gray;
+    text-align: center;
+    border-width: 2px;
+    margin: 100px 300px;
+    padding: 20px ;
+    width: 350px;
+}
+form.register-form{
+    border-radius: 15px;
+    border-style: solid;
+    border-color:gray;
+    text-align: center;
+    border-width: 2px;
+    margin: 0px 300px;
+    padding: 10px;
+    width: 350px;
+}
+#gender{
+    display: flex;
+    background-color: white;
+}
+#gender li{
+    width: 50px;
+}
+div.login-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    background-color: black;
+}
+div.register-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    background-color: black;
+}
+h1{
+    text-align: center;
+    color: white;
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: 700;
+}
+h2{
+    text-align: center;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+input{
+    border-style: solid;
+    border-color: lightgray;
+    padding: 10px;
+    width: 300px; 
+}
+p{
+    text-align: center;
+    color: #5DA2D5;
+}
+p.gender{
+    color: #5DA2D5;
+}
+
+
