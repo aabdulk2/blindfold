@@ -71,5 +71,5 @@ h1{
 .right p {
     width: 80%;
     font-family: 'Quicksand', sans-serif;
-    word-break: break-all;
+    word-wrap: break-word;
 }
