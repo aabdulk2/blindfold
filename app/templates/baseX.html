@@ -23,7 +23,10 @@
             </ul>
             <div onclick="dropdown()" class="account">
                 <img src={{ currentuser.image if currentuser.image else "../static/images/default-profile.webp"}} alt="default">
-                <a href="/logout"></a>
+                <div id="dropdown" class="dropdown-content">
+                    <a href="/profile">My Profile</a>
+                    <a href="/logout">Log Out</a>
+                </div>
             </div>
         </div>
 {% block content %}
@@ -31,4 +34,5 @@
 {% endblock %}
     </body>
     <script src="/static/js/submitEvent.js"></script>
+    <script src="/static/js/dropdown.js"></script>
 </html>

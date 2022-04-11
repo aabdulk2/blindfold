@@ -1,3 +1,11 @@
+.profile-page{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: calc(100vh - 50px);
+    flex-direction: column;
+}
 .profile {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
@@ -8,6 +16,8 @@
     overflow: hidden;
     background-color: beige;
     box-shadow: 0px 10px 20px rgba(86, 86, 86, 0.2);
+    height: 500px;
+    font-weight: 600;
 }
 .profile-pic {
     height: 150px;
@@ -31,6 +41,8 @@
     background-color: black;
     padding: 20px;
     color: beige;
+    height: inherit;
+    justify-content: space-evenly;
 }
 .left h2{
     font-family: 'Quicksand', sans-serif;
@@ -50,6 +62,8 @@ h1{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: inherit;
+    justify-content: space-evenly;
 }
 .right h2{
     font-family: 'Quicksand', sans-serif;
@@ -57,4 +71,5 @@ h1{
 .right p {
     width: 80%;
     font-family: 'Quicksand', sans-serif;
+    word-break: break-all;
 }
