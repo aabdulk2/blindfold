@@ -8,7 +8,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from faker import Faker
 from app.models.Matches import Matches
 from app.models.Messages import Messages
-from flask_socketio import SocketIO
 
 fake = Faker()
 
