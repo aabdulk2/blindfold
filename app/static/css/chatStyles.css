@@ -1,0 +1,98 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+.matches-page{
+    display: flex;
+    width: 100vw;
+    height: calc(100vh - 50px);
+}
+#user-list{
+    background-color: rgba(180, 180, 180, 0.2);
+    width: 20%;
+    border-right: 1px solid rgba(155, 155, 155, 0.2);
+}
+#chatbox{
+    background-color: rgba(180, 180, 180, 0.2);
+    width: 50%;
+    padding: 20px 0px;
+}
+#user-profile{
+    background-color: rgba(180, 180, 180, 0.2);
+    border-left: 1px solid rgba(155, 155, 155, 0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0px;
+    font-family: 'Quicksand', sans-serif;
+    width: 30%;
+}
+#user-profile p{
+    word-break: break-all;
+}
+.user-bio h3{
+    margin-bottom: 10px;
+}
+#chatbox textarea{
+    width: 80%;
+    border: none;
+    padding: 10px;
+    height: 60px;
+    border-radius: 10px;
+    justify-self: flex-end;
+    resize: none;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+}
+#chatbox textarea:focus-visible{
+    outline: none;
+}
+#chatbox form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+}
+#chatbox .all-messages{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: calc(95vh - 106px);
+    overflow-y: scroll;
+}
+.all-messages p{
+    max-width: 50%;
+    word-break: break-all;
+    font-family: 'Quicksand', sans-serif;
+}
+#chatbox .our-msg{
+    align-self: flex-end;
+    background-color: rgb(95, 195, 226);
+    padding: 10px 15px;
+    margin: 0px 20px;
+    border-radius: 15px;
+}
+#chatbox .their-msg{
+    align-self: flex-start;
+    background-color: rgb(255, 255, 255);
+    padding: 10px 15px;
+    margin: 0px 20px;
+    border-radius: 15px;
+}
+*[class^='single-user-']{
+    background-color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    padding: 15px;
+    border-bottom: 1px solid rgba(155, 155, 155, 0.2);
+    transition: background-color 0.3s;
+}
+*[class^='single-user-']:hover{
+    background-color: rgb(226, 226, 226);
+    cursor: pointer;
+}

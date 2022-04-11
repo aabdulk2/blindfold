@@ -1,6 +1,8 @@
+from tokenize import String
+from wsgiref.validate import validator
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, IntegerField, SelectField, RadioField
-from wtforms.validators import InputRequired, Length, ValidationError, DataRequired
+from wtforms import StringField, PasswordField, SubmitField, IntegerField, SelectField, RadioField, TextAreaField
+from wtforms.validators import InputRequired, Length, ValidationError, DataRequired, Optional
 from app.models import Users
 
 class RegisterForm(FlaskForm):
@@ -11,7 +13,7 @@ class RegisterForm(FlaskForm):
     age = IntegerField(validators=[InputRequired()], render_kw={"placeholder":"Age"})
     gender = SelectField(validators=[InputRequired()],choices=[("Male"),("Female")])
     preference = SelectField(validators=[InputRequired()],choices=[("Male"),("Female")])
-    bio = StringField(validators=[InputRequired(), Length(min=100, max=600)], render_kw={"placeholder": "Bio: Minimum 100 characters"})
+    bio = TextAreaField(validators=[InputRequired(), Length(min=100, max=600)], render_kw={"placeholder": "Bio: Minimum 100 characters"})
     email = StringField(validators=[InputRequired(), Length(min=3, max=50)], render_kw={"placeholder": "Email"})
     
     submit = SubmitField("Register")
@@ -44,3 +46,6 @@ class LoginForm(FlaskForm):
         }
 class MatchForm(FlaskForm):
     email = StringField(validators=[DataRequired()])
+
+class MessageForm(FlaskForm):
+    message = TextAreaField("Message", render_kw={"placeholder": "Send a message..."})

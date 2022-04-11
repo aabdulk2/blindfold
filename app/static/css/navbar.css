@@ -1,0 +1,65 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    width: max-content;
+    display: flex;
+    font-family: 'Quicksand', sans-serif;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-bar{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    align-items: center;
+  }
+  #logo{
+    font-family: 'Dancing Script', cursive;
+    color: white;
+    font-size: 34px;
+    margin-left: 20px;
+  }
+  #find{
+      height: 40px;
+      width: 40px;
+  }
+  #find img{
+      height: 40px;
+      width:40px;
+  }
+  #matches{
+      height: 50px;
+      width: 40px;
+      display: flex;
+      align-items: center;
+  }
+  #heart{
+      height: 40px;
+      width: 40px;
+      filter: invert(66%) sepia(18%) saturate(5308%) hue-rotate(316deg) brightness(105%) contrast(93%);
+  }
+  .account{
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    margin: 5px;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  .account img{
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+  }
+  ul a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+  }
+  .dropdown{
+    height: 40px;
+    width: 40px;
+}
