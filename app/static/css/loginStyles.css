@@ -84,15 +84,9 @@ form.login-form{
     backdrop-filter: blur(6px);
     border: 2px solid rgba(255, 255, 255, 0.411);
 }
-form.register-form{
-    text-align: center;
-    margin: 0px 300px;
-    padding: 10px;
-    width: 350px;
-}
+
 #gender{
     display: flex;
-    background-color: white;
 }
 #gender li{
     width: 50px;
@@ -124,14 +118,6 @@ form.register-form{
 div.login-page{
     display: flex;
     justify-content: right;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
-    background-color: transparent;
-}
-div.register-page{
-    display: flex;
-    justify-content: center;
     align-items: center;
     text-align: center;
     min-height: 100vh;
@@ -201,4 +187,110 @@ p.gender{
     color: #5DA2D5;
 }
 
+/********************************************************
+******************REGISTER PAGE STYLES*******************
+*********************************************************/
+
+div.register-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    background-color: transparent;
+    background-image: url("https://cdn.wallpapersafari.com/6/59/WyIG2b.jpg");
+}
+
+.register-form{
+    text-align: center;
+    margin: 0px 300px;
+    padding: 30px 10px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
+    border-left: 1px solid rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+form.register-form * {
+    width: 200px;
+    padding: 0;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+form.register-form input {
+    padding: 10px;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    border: none;
+    width: 50%;
+    font-size: 12px;
+}
+
+form.register-form input::placeholder {
+    color: white;
+}
+
+form.register-form #gender, #preference {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    color: white;
+    width: 200px;
+    margin: 0;
+    font-size: 12px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: white;
+}
+
+form.register-form option {
+    border-radius: 0;
+    padding: 5px;
+    color: black;
+}
+
+form.register-form #username, form.register-form #password{
+    width: 50%;
+    font-size: 12px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: white;
+}
+
+form.register-form #username::placeholder, form.register-form #password::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+form.register-form #submit {
+    border-radius: 25px;
+    align-self: center;
+}
+
+form.register-form #bio {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    height: 60px;
+    padding: 10px;
+    resize: none;
+    width: 50%;
+    color: white;
+}
+
+#bio::placeholder {
+    color: white;
+}
+
+#username:autofill {
+    background-color: transparent, !important;
+}
 
