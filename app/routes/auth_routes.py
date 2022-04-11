@@ -44,7 +44,7 @@ def get_msgs(their_id):
 @auth_routes.route("/profile", methods=['GET','POST'])
 @login_required
 def outputProfile():
-    return render_template("profile.html",user=current_user)
+    return render_template("profile.html",user=current_user,currentuser=current_user)
 
 @auth_routes.route('/logout', methods=['GET','POST'])
 @login_required
@@ -55,7 +55,7 @@ def logout():
 @auth_routes.route("/home")
 @login_required
 def homePage():
-    return render_template("home.html",user=current_user)
+    return render_template("home.html",user=current_user,currentuser=current_user)
 
 @auth_routes.route("/login",methods=['GET','POST'])
 def login():
@@ -106,7 +106,7 @@ def findMatch():
     while random_user == current_user:
         random_user = random.choice(users)
         
-    return render_template("match.html",user=random_user)
+    return render_template("match.html",user=random_user,currentuser=current_user)
 
 @auth_routes.route("/matched", methods=["POST"])
 def match():
@@ -131,7 +131,7 @@ def matches():
     for user in users:
         print(user.firstName)    
         
-    return render_template("matches.html",users=users,user=current_user)
+    return render_template("matches.html",users=users,currentuser=current_user)
 
 
 @auth_routes.route("/message/<int:userid_received>", methods=["POST"])
@@ -151,21 +151,21 @@ def message(userid_received):
     print("\n\n", all_messages)
     user = Users.query.get(userid_received)
     
-    return render_template("matches.html",users=allusers,user=user,messages=all_messages)
+    return render_template("matches.html",users=allusers,user=user,messages=all_messages,currentuser=current_user)
 
 @auth_routes.route("/messages/<int:our_id>/<int:their_id>")
 def get_users_messages(our_id,their_id):
     messages = get_msgs(their_id)
     allusers = get_my_matches()
     user = Users.query.get(their_id)
-    return render_template("matches.html",users=allusers,user=user,messages=messages)
+    return render_template("matches.html",users=allusers,user=user,messages=messages,currentuser=current_user)
 
 @auth_routes.route("/matches/<int:userid>", methods=["GET"])
 def get_user_msg(userid):
     user = Users.query.get(userid)
     messages = get_msgs(userid)
     allusers = get_my_matches()
-    return render_template("matches.html",user=user,users=allusers,messages=messages)
+    return render_template("matches.html",user=user,users=allusers,messages=messages,currentuser=current_user)
 
 @auth_routes.route("/seedall")
 def seed_all():

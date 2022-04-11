@@ -4,27 +4,31 @@
       <meta charset="utf-8">
       <title>
             {% block title %}BlindFold{% endblock %}
-      </title> 
-        <link rel="stylesheet" href="static/css/profileStyles.css">
+      </title>
+
+        <link rel="stylesheet" href="/static/css/profileStyles.css">
+        <link rel="stylesheet" href="/static/css/chatStyles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/static/css/profile.css"> 
+        <link rel="stylesheet" href="/static/css/navbar.css">
     </head>
     <body>
         <div class="nav-bar">
+            <a id="logo" href="/home">Blindfold</a>
             <ul>
-                <li><a href="/home">Home</a></li>
-                <li><a href="/profile">Profile</a></li>
-                <li><a href="/matches">Matches</a></li>
-                <div class="logout">
-                    <li><a href="/logout">Logout</a></li>
-                </div>
+                <a id="find" href="/match"><img src="../static/images/findmatch.svg"></a>
+                <a id="matches" href="/matches"><img id="heart" src="../static/images/filledheart.svg"></a>
             </ul>
+            <div onclick="dropdown()" class="account">
+                <img src={{ currentuser.image if currentuser.image else "../static/images/default-profile.webp"}} alt="default">
+                <a href="/logout"></a>
+            </div>
         </div>
-        <br>
 {% block content %}
 
 {% endblock %}
-
     </body>
+    <script src="/static/js/submitEvent.js"></script>
 </html>

@@ -24,6 +24,10 @@ ul {
   #find{
       height: 40px;
       width: 40px;
+      transition: transform 0.3s;
+  }
+  #find:hover{
+    transform: translateY(-3px);
   }
   #find img{
       height: 40px;
@@ -34,6 +38,10 @@ ul {
       width: 40px;
       display: flex;
       align-items: center;
+      transition: transform 0.3s;
+  }
+  #matches:hover{
+    transform: translateY(-3px);
   }
   #heart{
       height: 40px;
