@@ -8,6 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from faker import Faker
 from app.models.Matches import Matches
 from app.models.Messages import Messages
+from flask_socketio import SocketIO
 
 fake = Faker()
 
@@ -34,7 +35,8 @@ def get_msgs(their_id):
     our_msgs_unfiltered = current_user.messages
     our_msgs = [message for message in our_msgs_unfiltered if message.userid_received == their_id]
     their_user = Users.query.get(their_id)
-    their_msgs = their_user.messages
+    their_msgs_unfiltered = their_user.messages
+    their_msgs = [message for message in their_msgs_unfiltered if message.userid_received == current_user.id]
     user_msgs = our_msgs + their_msgs
     def sortbyid(message):
         return message.id

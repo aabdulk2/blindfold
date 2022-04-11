@@ -2,11 +2,13 @@ from flask import Flask, render_template
 from flask_login import LoginManager
 from app.routes.auth_routes import auth_routes
 from app.models import db, Users
+from flask_socketio import SocketIO
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Blindfold.db'
 app.config['SECRET_KEY'] = 'secretKey'
 db.init_app(app)
+socketio = SocketIO(app)
 
 app.register_blueprint(auth_routes)
 
@@ -22,3 +24,6 @@ def load_user(user_id):
 @app.route("/", methods=["GET"])
 def home():
     return "Hello"
+
+if __name__ == '__main__':
+    socketio.run(app)
