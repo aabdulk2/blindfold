@@ -20,10 +20,12 @@
                 <p>{{ user.bio }}</p><br>
             </div>
         </div>  
-        <a id="like" href="/match"><img src="../static/images/x.svg"></img></a> 
-        <form action="/matched" method="POST">
-            <input type="hidden" value={{ user.email }} name="email" id="email">
-            <button><img src="../static/images/like.svg"></button>
-        </form>
+        <div class="user-actions">
+            <a id="next" href="/match"><img src="../static/images/x.svg"></img></a> 
+            <form action="/matched" method="POST">
+                <input type="hidden" value={{ user.email }} name="email" id="email">
+                <button id="like"><img src="../static/images/filledheart.svg"></button>
+            </form>
+        </div>
     </div>
 {% endblock %}
