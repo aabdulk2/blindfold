@@ -4,15 +4,18 @@
 
   <div class="login-page">
     <h1>BlindFold</h1>
-    <form class="login-form" action="/login" method="POST">
-      <div class="form-container">
-        {{ form.hidden_tag() }}
-        {{ form.username }}
-        {{ form.password }}
-        {{ form.submit }}
+    <div class="move-to-right">
+      <form class="login-form" action="/login" method="POST">
+        <div class="form-container">
+          <h2 class="registerh">Login</h2>
+          {{ form.hidden_tag() }}
+          {{ form.username }}
+          {{ form.password }}
+          {{ form.submit }}
+        </div>
+      </form>
       <a class="regbtn" href="/register">Don't have an account? Sign up!</a>
-      </div>
-    </form>
+    </div>
 
   </div>
 
