@@ -60,11 +60,11 @@ select{
     cursor: pointer;
     border: none;
     color: gray;
-    width:325px;
-    padding: 10px 16px;
+    /* width:325px; */
+    /* padding: 10px 16px; */
     text-align: left;
     text-decoration: none;
-    display: inline-block;
+    /* display: inline-block; */
     font-size: 16px;
 }
 option.hide{
@@ -90,12 +90,12 @@ form.login-form{
     box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-#gender{
+/* #gender{
     display: flex;
 }
 #gender li{
     width: 50px;
-}
+} */
 .regbtn{
     font-family: 'Dancing Script', cursive;
     font-size: 24px;
@@ -184,12 +184,19 @@ p.gender{
 
 div.register-page{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     min-height: 100vh;
     background-color: transparent;
     background-image: url("https://cdn.wallpapersafari.com/6/59/WyIG2b.jpg");
+}
+
+.login-btn {
+    margin-top: 20px;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .register-form{
@@ -236,17 +243,17 @@ form.register-form #gender, #preference {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 25px;
     color: white;
-    width: 200px;
+    width: 195px;
     margin: 0;
     font-size: 12px;
     background-color: rgba(255, 255, 255, 0.3);
     border: none;
     color: white;
+    appearance: none;
 }
 
 form.register-form option {
     border-radius: 0;
-    padding: 5px;
     color: black;
 }
 
@@ -266,7 +273,7 @@ form.register-form #username::placeholder, form.register-form #password::placeho
 form.register-form #submit {
     border-radius: 25px;
     align-self: center;
-    width: 50%;
+    width: 195px;
 }
 
 form.register-form #bio {
