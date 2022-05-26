@@ -103,10 +103,12 @@ def registerPage():
 @auth_routes.route("/match",methods=['GET'])
 def findMatch():
     users = Users.query.all()
+    seen = []
     random_user = random.choice(users)
-    while random_user == current_user:
+    if random_user.id in seen:
         random_user = random.choice(users)
-        
+    seen.append(random_user.id)   
+     
     return render_template("match.html",user=random_user,currentuser=current_user)
 
 @auth_routes.route("/matched", methods=["POST"])

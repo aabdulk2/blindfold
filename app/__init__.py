@@ -3,12 +3,14 @@ from flask_login import LoginManager
 from app.routes.auth_routes import auth_routes
 from app.models import db, Users
 from flask_socketio import SocketIO
+from flask_migrate import Migrate
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://blindfold_dev:blindfoldpassword@localhost/blindfold_db'
 app.config['SECRET_KEY'] = 'secretKey'
 db.init_app(app)
 socketio = SocketIO(app)
+Migrate(app,db)
 
 app.register_blueprint(auth_routes)
 
