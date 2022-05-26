@@ -187,3 +187,8 @@ def seed_all():
         db.session.add(user)
         db.session.commit()
     return "Seeded"
+
+# TEST ROUTE MADE TO CHECK IF I CAN MAKE CALLS TO THE API FROM THE SCRIPTS ->
+@auth_routes.route("/hello")
+def fetchtest():
+    return {"Message": "HELLO WORLD"}

@@ -1,11 +1,9 @@
-const fetch = require('node-fetch')
-
 const seen = [];
 
 const btn = document.querySelector('#next');
-btn.addEventListener('click', (e) => {
+btn.addEventListener('click', async(e) => {
     e.preventDefault();
     console.log(seen);
-    const response = fetch('https://random-data-api.com/api/color/random_color')
-    console.log(response)
+    const response = await (await fetch('/hello')).json()
+    console.log(await response)
 });
