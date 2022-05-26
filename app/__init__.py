@@ -5,7 +5,7 @@ from app.models import db, Users
 from flask_socketio import SocketIO
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Blindfold.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://blindfold_dev:blindfoldpassword@localhost/blindfold_db'
 app.config['SECRET_KEY'] = 'secretKey'
 db.init_app(app)
 socketio = SocketIO(app)
