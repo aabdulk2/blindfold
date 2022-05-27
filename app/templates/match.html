@@ -5,19 +5,19 @@
         <h1>Love is blind, start matching!</h1>
         <div class="profile">
             <div class="left">
-                <h2>{{ user.username }}</h2>
+                <h2 class="match-username">{{ user.username }}</h2>
                 <div class="profile-pic">
                     <img src={{ user.image if user.image else "../static/images/default-profile.webp"}} alt="default">
                 </div>
-                <p>{{ user.firstName }} {{ user.lastName }}</p>
-                <p>{{ user.email }}</p>
-                <p>Age: {{ user.age }}</p>
-                <p>Gender: {{ user.gender }}</p>
-                <p>Preference: {{ user.preference }}</p>
+                <p class="match-name">{{ user.firstName }} {{ user.lastName }}</p>
+                <p class="match-email">{{ user.email }}</p>
+                <p class="match-age">Age: {{ user.age }}</p>
+                <p class="match-gender">Gender: {{ user.gender }}</p>
+                <p class="match-preference">Preference: {{ user.preference }}</p>
             </div>
             <div class="right">
                 <h2>Biography</h2>
-                <p>{{ user.bio }}</p><br>
+                <p class="match-bio">{{ user.bio }}</p><br>
             </div>
         </div>  
         <div class="user-actions">

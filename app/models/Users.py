@@ -15,4 +15,17 @@ class Users(db.Model, UserMixin):
     password = db.Column(db.String(600), nullable=False)
     
     messages = db.relationship("Messages", backref="Users")
+
+    def to_json(self):
+        return {
+            'id': self.id,
+            'firstName': self.firstName,
+            'lastName': self.lastName,
+            'gender': self.gender,
+            'bio': self.bio,
+            'email': self.email,
+            'preference': self.preference,
+            'username': self.username,
+            'age': self.age
+        }
     

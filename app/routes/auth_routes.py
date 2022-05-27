@@ -189,6 +189,11 @@ def seed_all():
     return "Seeded"
 
 # TEST ROUTE MADE TO CHECK IF I CAN MAKE CALLS TO THE API FROM THE SCRIPTS ->
-@auth_routes.route("/hello")
-def fetchtest():
-    return {"Message": "HELLO WORLD"}
+@auth_routes.route("/hello", methods=['POST'])
+def fetchMatches():
+    seen = request.json
+    allusers = Users.query.all()
+    unseen = [user.to_json() for user in allusers if user.id not in seen]
+    match = random.choice(unseen)
+    
+    return {"match": match}
