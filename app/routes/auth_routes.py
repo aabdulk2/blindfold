@@ -111,19 +111,39 @@ def findMatch():
      
     return render_template("match.html",user=random_user,currentuser=current_user)
 
-@auth_routes.route("/matched", methods=["POST"])
-def match():
-    form = MatchForm()
-    print(form.data)
-    user_liked = Users.query.filter(Users.email == form.email.data).first()
-    print(user_liked.id)
+@auth_routes.route("/matched/<int:theirid>", methods=["POST"])
+def match(theirid):
+    
+    user_liked = Users.query.get(theirid)
+    print(user_liked.firstName)
     sent_like = Matches(userid_Matched=user_liked.id,userid_Matching=current_user.id)
     db.session.add(sent_like)
     db.session.commit()
     received_like = Matches.query.filter(Matches.userid_Matching == user_liked.id and Matches.userid_Matched == current_user.id).first()
     if received_like:
-        return f"You and {user_liked.firstName} both matched!"
-    return form.data
+        return {
+            'Message':f'You matched with {user_liked.firstName} {user_liked.lastName}', 
+            'User': user_liked.to_json(),
+            'Mutual': True
+            } 
+    return {
+            'Message':f'You liked {user_liked.firstName} {user_liked.lastName}', 
+            'User': user_liked.to_json()
+            } 
+
+# @auth_routes.route("/matched", methods=["POST"])
+# def match():
+#     form = MatchForm()
+#     print(form.data)
+#     user_liked = Users.query.filter(Users.email == form.email.data).first()
+#     print(user_liked.id)
+#     sent_like = Matches(userid_Matched=user_liked.id,userid_Matching=current_user.id)
+#     db.session.add(sent_like)
+#     db.session.commit()
+#     received_like = Matches.query.filter(Matches.userid_Matching == user_liked.id and Matches.userid_Matched == current_user.id).first()
+#     if received_like:
+#         return f"You and {user_liked.firstName} both matched!"
+#     return form.data
 
 
 
@@ -192,8 +212,12 @@ def seed_all():
 @auth_routes.route("/hello", methods=['POST'])
 def fetchMatches():
     seen = request.json
+    seen.append(current_user.id)
     allusers = Users.query.all()
+    unmatched = Matches.query.filter(Matches.userid_Matching == current_user.id).all()
+    unmatched_id = [user.userid_Matched for user in unmatched]
     unseen = [user.to_json() for user in allusers if user.id not in seen]
-    match = random.choice(unseen)
+    unseen_and_unmatched = [user for user in unseen if user['id'] not in unmatched_id]
+    match = random.choice(unseen_and_unmatched)
     
     return {"match": match}

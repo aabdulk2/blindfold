@@ -1,9 +1,17 @@
 const seen = [];
+let unseen_match;
 
 const btn = document.querySelector('#next');
-btn.addEventListener('click', async(e) => {
-    e.preventDefault();
-    console.log(seen);
+const like = document.querySelector('#like');
+
+document.addEventListener('DOMContentLoaded', () => {
+    findNewMatch();
+})
+
+// LOGIC TO MAKE NEXT BUTTON DYNAMIC
+// FETCH REQUEST TO BACKEND, STORING DATA RETURNED AND DISPLAYING IT USING JS
+
+async function findNewMatch(){
     const response = await (
         await fetch('/hello', {
             method: 'POST',
@@ -14,7 +22,7 @@ btn.addEventListener('click', async(e) => {
         })
     ).json()
     console.log(response)
-    const unseen_match = response.match
+    unseen_match = response.match
     seen.push(unseen_match.id)
 
     const username_field = document.querySelector('.match-username');
@@ -32,4 +40,36 @@ btn.addEventListener('click', async(e) => {
     email_field.innerHTML = unseen_match.email
     gender_field.innerHTML = `Gender: ${unseen_match.gender}`
     preference_field.innerHTML = `Preference: ${unseen_match.preference}`
+}
+
+btn.addEventListener('click', async(e) => {
+    e.preventDefault();
+    findNewMatch();
 });
+
+// LOGIC TO MAKE LIKE BUTTON DYNAMIC
+// FETCH REQUEST TO BACKEND, CREATE NEW LIKE BASED ON CURRENT USER AND LIKED USER
+// NOTIFY MATCH HAS BEEN MADE, IF BOTH USERS MATCHED THEN NOTIFY AS WELL
+// AFTER USER LIKES, FIND A NEW MATCH
+
+like.addEventListener('click', async(e) => {
+    e.preventDefault();
+    const response = await (
+        await fetch(`/matched/${unseen_match.id}`, {
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        })
+    ).json()
+    const modal = document.querySelector('.match-popup');
+    modal.innerHTML = `
+        <img src={{ ${currentuser.image} if ${currentuser.image} else "../static/images/default-profile.webp"}} alt="default"><img src={{ ${unseen_match.image} if ${unseen_match.image} else "../static/images/default-profile.webp"}} alt="default">
+        <h2>${response.Message}</h2>
+    `;
+    const modal_wrap = document.querySelector('.modal-wrapper');
+    if(response.Mutual) modal_wrap.classList.add('show')
+
+    findNewMatch();
+
+})
