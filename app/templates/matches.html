@@ -4,11 +4,24 @@
     <div class="matches-page">
         <div id="user-list">
             {% for user in users %}
-            <a href="/matches/{{ user.id }}">
                 <div class="single-user-{{ user.id }}">
                     <p>{{ user.firstName }} {{ user.lastName }}</p>
+                    <div class="user-interactions">
+                        <a class="icon-containers" href="/matches/{{ user.id }}"><script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+                            <lord-icon
+                                src="https://cdn.lordicon.com/iibbnuky.json"
+                                trigger="loop-on-hover"
+                                colors="primary:#c71f16,secondary:#f4a09c"
+                                style="width:8vw;height:8vh">
+                            </lord-icon></a>
+                        <a class="icon-containers" href="/unmatch/{{ user.id }}"><script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+                            <lord-icon
+                                src="https://cdn.lordicon.com/ghsceiqn.json"
+                                trigger="morph"
+                                style="width:8vw;height:8vh">
+                            </lord-icon></a>
+                    </div>
                 </div>
-            </a>
             {% endfor %}
         </div>
         {% if user %}

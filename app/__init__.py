@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 from flask_login import LoginManager
 from app.routes.auth_routes import auth_routes
 from app.models import db, Users
@@ -25,7 +25,7 @@ def load_user(user_id):
 
 @app.route("/", methods=["GET"])
 def home():
-    return "Hello"
+    return redirect("/login")
 
 if __name__ == '__main__':
-    socketio.run(app)
+     socketio.run(app)

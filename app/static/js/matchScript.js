@@ -64,7 +64,7 @@ like.addEventListener('click', async(e) => {
     ).json()
     const modal = document.querySelector('.match-popup');
     modal.innerHTML = `
-        <img src={{ ${currentuser.image} if ${currentuser.image} else "../static/images/default-profile.webp"}} alt="default"><img src={{ ${unseen_match.image} if ${unseen_match.image} else "../static/images/default-profile.webp"}} alt="default">
+        <img src="../static/images/default-profile.webp" alt="default"><img src="../static/images/default-profile.webp" alt="default">
         <h2>${response.Message}</h2>
     `;
     const modal_wrap = document.querySelector('.modal-wrapper');

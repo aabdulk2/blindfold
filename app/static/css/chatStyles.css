@@ -87,12 +87,18 @@ a{
 *[class^='single-user-']{
     background-color: white;
     font-family: 'Quicksand', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-size: 16px;
     padding: 15px;
     border-bottom: 1px solid rgba(155, 155, 155, 0.2);
     transition: background-color 0.3s;
 }
-*[class^='single-user-']:hover{
-    background-color: rgb(226, 226, 226);
-    cursor: pointer;
+.user-interactions{
+    display: flex;
+}
+.icon-containers{
+    width: 5vw;
+    height: 5vh;
 }

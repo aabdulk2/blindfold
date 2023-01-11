@@ -111,6 +111,14 @@ def findMatch():
      
     return render_template("match.html",user=random_user,currentuser=current_user)
 
+@auth_routes.route("/unmatch/<int:userid>",methods=['GET','POST'])
+def unMatch(userid):
+    user = Users.query.get(userid)
+    match_to_remove = Matches.query.filter(Matches.userid_Matched == userid).first()
+    db.session.delete(match_to_remove)
+    db.session.commit()
+    return redirect("/matches")
+
 @auth_routes.route("/matched/<int:theirid>", methods=["POST"])
 def match(theirid):
     
