@@ -1,0 +1,48 @@
+:root {
+    --typewriterSpeed: 3s;
+  }
+  
+  #intro-two {
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    font-weight: 400;
+    opacity: 0;
+    transform: translateY(3rem);
+    animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+  }
+  
+  #intro-one {
+    border-right: solid 3px rgb(255, 255, 255);
+    white-space: nowrap;
+    overflow: hidden;    
+    font-family: 'Quicksand', sans-serif;  
+    font-size: 35px;
+    color: rgb(255, 255, 255);
+  }
+  
+  /* Animation */
+  #intro-one {
+    animation: animated-text 4s steps(27,end) 1s 1 normal both,
+               animated-cursor 600ms steps(69,end) infinite;
+  }
+  
+  /* text animation */
+  
+  @keyframes animated-text{
+    from{width: 0;}
+    to{width: 472px;}
+  }
+  
+  /* cursor animations */
+  
+  @keyframes animated-cursor{
+    from{border-right-color: rgb(255, 255, 255);}
+    to{border-right-color: transparent;}
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
