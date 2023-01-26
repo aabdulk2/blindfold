@@ -18,7 +18,7 @@ ul {
   #logo{
     font-family: 'Dancing Script', cursive;
     color: white;
-    font-size: 34px;
+    font-size: 44px;
     margin-left: 20px;
   }
   #find{
@@ -49,12 +49,8 @@ ul {
       filter: invert(66%) sepia(18%) saturate(5308%) hue-rotate(316deg) brightness(105%) contrast(93%);
   }
   .account{
-    height: 40px;
-    width: 40px;
-    margin: 5px;
-    background-color: white;
-    border-radius: 50%;
-    margin-right: 20px;
+    height: 7vh;
+    width: 7vw;
   }
   .account:hover{
     cursor: pointer;
@@ -73,7 +69,6 @@ ul {
   pointer-events: none;
   opacity: 0;
   position: absolute;
-  top: calc(50px + 10px);
   right: 15px;
   background-color: white;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);

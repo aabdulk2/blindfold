@@ -1,0 +1,512 @@
+/* unvisited link */
+*{
+    margin:0;
+    padding: 0;
+}
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+#background_vid{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+/* visited link */
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+  
+/* mouse over link */
+a:hover {
+    color: white;
+    text-decoration: underline;
+}
+  
+/* selected link */
+a:active {
+    color: white;
+    text-decoration: none;
+}
+
+button.sign-button:hover {
+    background-color: #90ccf4;
+}
+button.sign-button{
+    cursor: pointer;
+    background-color: #5DA2D5;
+    border: none;
+    color: white;
+    width:325px;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+}
+
+select{
+    border-style: solid;
+    border-color: lightgray;
+    border-width: 2px;
+    cursor: pointer;
+    border: none;
+    color: gray;
+    /* width:325px; */
+    /* padding: 10px 16px; */
+    text-align: left;
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 16px;
+}
+option.hide{
+    display:none;
+}
+
+form.login-form{
+    text-align: right;
+    width: 300px;
+    /* margin-right: 10%; */
+}
+
+h2.registerh {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    backdrop-filter: blur(6px);
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
+    border-left: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.move-to-right {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 10%;
+}
+
+/* #gender{
+    display: flex;
+}
+#gender li{
+    width: 50px;
+} */
+.regbtn{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+#submit{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    align-self: center;
+    background-color: white;
+    border-radius: 25px;
+    padding: 8px 20px;
+    width: 243px;
+    /* border: 2px solid rgba(255, 255, 255, 0.411); */
+    border: none;
+    transition: background-color 0.3s;
+}
+#submit:hover{
+    background-color: rgb(202, 202, 202);
+    cursor: pointer;
+}
+div.login-page{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: transparent;
+    flex-direction: row;
+    height: 100vh;
+}
+h1{
+    left:30px;
+    top:10px;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-size: 65px;
+    margin-left: 1vw;
+}
+h2{
+    text-align: center;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#username, #password{
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    width: 223px; 
+}
+#username::placeholder, #password::placeholder{
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+#username:focus-visible{
+    outline: none;
+}
+#password:focus-visible{
+    outline: none;
+}
+
+.overlay{
+    background-color: black;
+    opacity: .7;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+p{
+    text-align: center;
+    color: #5DA2D5;
+}
+p.gender{
+    color: #5DA2D5;
+}
+
+/********************************************************
+******************REGISTER PAGE STYLES*******************
+*********************************************************/
+
+div.register-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    background-color: transparent;
+    background-image: url("https://cdn.wallpapersafari.com/6/59/WyIG2b.jpg");
+}
+
+.login-btn {
+    margin-top: 20px;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.register-form{
+    text-align: center;
+    margin: 0px 300px;
+    padding: 30px 10px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.7);
+    border-left: 1px solid rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+form.register-form * {
+    width: 200px;
+    padding: 0;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+form.register-form input {
+    padding: 10px;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    border: none;
+    width: 50%;
+    font-size: 12px;
+}
+form.register-form input::placeholder {
+    color: white;
+}
+form.register-form #gender, #preference {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    color: white;
+    width: 195px;
+    margin: 0;
+    font-size: 12px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: white;
+    appearance: none;
+}
+form.register-form option {
+    border-radius: 0;
+    color: black;
+}
+form.register-form #username, form.register-form #password{
+    width: 50%;
+    font-size: 12px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: white;
+}
+form.register-form #username::placeholder, form.register-form #password::placeholder {
+    color: white;
+    opacity: 1;
+}
+form.register-form #submit {
+    border-radius: 25px;
+    align-self: center;
+    width: 195px;
+}
+form.register-form #bio {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    height: 60px;
+    padding: 10px;
+    resize: none;
+    width: 50%;
+    color: white;
+}
+
+#bio::placeholder {
+    color: white;
+}
+
+#username:autofill {
+    background-color: transparent, !important;
+}
+
+/********************************************************
+******************HOME PAGE STYLES*******************
+*********************************************************/
+
+
+.header{
+    background-color: black;
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    position: fixed;
+    z-index: 2;
+    width: 100vw;
+}
+#bf-icon{
+    width: 5vw;
+    height: 3vh;
+}
+.home-logo{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5vw;
+}
+.home-navbar{
+    display: flex;
+    white-space: nowrap;
+}
+#mid-nav{
+    display: flex;
+    gap: 2vw;
+}
+.home-navbar-two{
+    margin-right: 2vw;
+}
+#mid-nav a, #end-nav a {
+    color: #fff;
+    text-decoration: none;
+    
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
+  }
+  #mid-nav a:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  #mid-nav a:hover:after { 
+    width: 100%; 
+    left: 0; 
+}
+#end-nav a:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  #end-nav a:hover:after { 
+    width: 100%; 
+    left: 0; 
+}
+.home-navbar-one{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 45%;
+}
+.intro-summary{
+    margin-bottom: 10vh;
+}
+.our-mission{
+    display: flex;
+    flex-direction: row;
+    font-family: 'Quicksand', sans-serif;
+    color: black;
+    background-color: black;
+    height: 100vh;
+    align-items: center;
+}
+.mission-img{
+    height: 100%;
+    width: 100%;
+}
+.mission-imgbox{
+    position: absolute;
+    height: 90%;
+    width: 70%;
+    right: 0;
+}
+.img-overlay{
+    background-color: black;
+    opacity: .7;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.mission-title{
+    color: gray;
+    font-size: 17px;
+}
+.mission-textbox{
+    margin-left: 5vw;
+    z-index: 1;
+    padding: 3pc;
+    width: 50vw;
+}
+#mission-firstword{
+    font-size: 40px;
+    font-weight: 700;
+}
+.our-mission h2{
+    font-size: 22px;
+    font-weight: 100;
+    color: white;
+    text-align: left;
+}
+.about-us{
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Quicksand', sans-serif;
+    color: black;
+    background-color: black;
+    height: 100vh;
+    align-items: center;
+}
+.about-us h2{
+    color: white;
+    font-size: 22px;
+    font-weight: 100;
+    text-align: left;
+}
+.about-textbox{
+    margin-left: 5vw;
+    z-index: 1;
+    padding: 3pc;
+    width: 50vw;
+    right: 0;
+}
+#about-firstword{
+    font-size: 40px;
+    font-weight: 700;
+}
+.about-title{
+    color: gray;
+    font-size: 17px;
+}
+.about-imgbox{
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    left: 0;
+}
+.about-img{
+    position: absolute;
+    margin-left: 2vw;
+    max-width: 100%;
+    max-height: 100%;
+}
+.about-overlay{
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 1;
+}
+.faq{
+    background-color: black;
+}
+.faq p{
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/********************************************************
+******************Scrollbar*******************
+*********************************************************/
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+    background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: white; 
+}
+
+
